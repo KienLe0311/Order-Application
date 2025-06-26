@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderApplication"
         tools:targetApi="31">
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".CustomerInfoActivity"/>
+        <activity android:name=".OrderHistoryActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

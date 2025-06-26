@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin đặt hàng"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Người nhận :"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Nhập tên người nhận" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Địa chỉ :"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editTextText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Nhập địa chỉ" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="SDT :"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Nhập số điện thoại" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phương thức thanh toán "
+        android:textSize="20dp"
+        android:layout_margin="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonZalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZaloPay"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMomo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MOMO"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thanh toán"
+        android:gravity="center"
+        android:layout_margin="30dp"/>
+
+
+</LinearLayout>
