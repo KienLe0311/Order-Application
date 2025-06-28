@@ -1,5 +1,7 @@
 package com.example.orderapplication;
 
+import static androidx.core.content.IntentCompat.getParcelableArrayListExtra;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -30,29 +32,37 @@ public class OrderActivity extends AppCompatActivity {
         txtTotal = findViewById(R.id.tvTongTien);
         btnConfirm = findViewById(R.id.btnThanhToan);
 
+        // Kiểm tra dữ liệu Intent
         selectedProducts = getIntent().getParcelableArrayListExtra("selectedProducts");
+        if (selectedProducts == null) {
+            selectedProducts = new ArrayList<>();
+        }
 
+        // Cài đặt RecyclerView
         orderAdapter = new OrderAdapter(this, selectedProducts);
         recyclerOrder.setLayoutManager(new LinearLayoutManager(this));
         recyclerOrder.setAdapter(orderAdapter);
 
-
-
+        // Tính tổng tiền
         int total = 0;
         for (Product p : selectedProducts) {
-            total += p.getPrice();
+            if (p != null) {
+                total += p.getPrice();
+            }
         }
         txtTotal.setText("Tổng tiền: " + total + " VNĐ");
 
+        // Xử lý sự kiện nút xác nhận
         btnConfirm.setOnClickListener(v -> {
-            if (selectedProducts == null || selectedProducts.isEmpty()) {
+            if (selectedProducts.isEmpty()) {
                 Toast.makeText(this, "Không có sản phẩm để đặt!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
+            // Chuyển sang màn hình thông tin khách hàng
             Intent intent = new Intent(OrderActivity.this, CustomerInfoActivity.class);
             intent.putParcelableArrayListExtra("orderedProducts", new ArrayList<>(selectedProducts));
             startActivity(intent);
         });
-
     }
+}
